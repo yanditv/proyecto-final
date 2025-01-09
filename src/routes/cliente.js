@@ -21,7 +21,7 @@ const clienteController = require("../controllers/clienteController");
     }
   ]
 } */
-router.get("/", clienteController.getClientes);
+router.get("/", clienteController.getClientes,);
 
 /* POST Cliente */
 /* #swagger.tags = ['Clientes'] */
