@@ -16,5 +16,6 @@ exports.validateCedula = (cedula) => {
     }
 
     const digitoVerificador = (10 - (suma % 10)) % 10;
+
     return digitoVerificador === digitos[9];
 };

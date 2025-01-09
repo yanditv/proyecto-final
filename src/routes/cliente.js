@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const clienteController = require("../controllers/clienteController");
-const auth = require('../middeware/auth');
+const auth = require('../middlewares/auth');
 /* GET Clientes */
 /* #swagger.tags = ['Clientes'] */
 /* #swagger.summary = 'Consultar todos los clientes' */
