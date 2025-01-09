@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const clienteController = require("../controllers/clienteController");
-
+const auth = require('../middeware/auth');
 /* GET Clientes */
 /* #swagger.tags = ['Clientes'] */
 /* #swagger.summary = 'Consultar todos los clientes' */
@@ -21,7 +21,7 @@ const clienteController = require("../controllers/clienteController");
     }
   ]
 } */
-router.get("/", clienteController.getClientes,);
+router.get("/", clienteController.getClientes, auth);
 
 /* POST Cliente */
 /* #swagger.tags = ['Clientes'] */
@@ -55,7 +55,7 @@ router.get("/", clienteController.getClientes,);
 /* #swagger.responses[400] = {
   description: 'Datos del cliente inválidos o incompletos.'
 } */
-router.post("/", clienteController.createCliente);
+router.post("/", clienteController.createCliente, auth);
 
 /* PUT Cliente */
 /* #swagger.tags = ['Clientes'] */
@@ -95,7 +95,7 @@ router.post("/", clienteController.createCliente);
 /* #swagger.responses[404] = {
   description: 'Cliente no encontrado.'
 } */
-router.put("/:id", clienteController.updateCliente);
+router.put("/:id", clienteController.updateCliente, auth);
 
 /* DELETE Cliente */
 /* #swagger.tags = ['Clientes'] */
@@ -113,6 +113,6 @@ router.put("/:id", clienteController.updateCliente);
 /* #swagger.responses[404] = {
   description: 'Cliente no encontrado.'
 } */
-router.delete("/:id", clienteController.deleteCliente);
+router.delete("/:id", clienteController.deleteCliente, auth);
 
 module.exports = router;
